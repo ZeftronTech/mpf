@@ -13,62 +13,49 @@ router
   var retObj = {}
   Personalize.getByOwnerId(ownerId, (response)=> {
     var usr = response.details;
-    console.log(usr)
-    retObj = {
-      basic: {
-        firstName : usr.firstName,
-        lastName : usr.lastName,
-        mob: usr.phone,
-        emailId: usr.email,
-        city: usr.city,
-        country: usr.country,
-        pass: '',
-      },
-      physical: {
-        height: usr.heightInfeet.inches,
-        weight: usr.weight,
-        dob: usr.DOB,
-        faceShape: usr.faceShapes,
-        bodyType: usr.bodyShapes,
-        facialLook: usr.facialLook,
-        hairColor: usr.hairColor,
-        eyeColor: usr.eyeColor,
-        skinType: usr.skinColor,
-        veinColor: usr.veinColor
-      },
-      clothing: {
-        existingWadrobe: {},
+    if(usr) {
+      retObj = {
+        basic: {
+          firstName : usr.firstName,
+          lastName : usr.lastName,
+          mob: usr.phone,
+          emailId: usr.email,
+          city: usr.city,
+          country: usr.country,
+          pass: '',
+        },
+        physical: {
+          height: usr.heightInfeet.inches,
+          weight: usr.weight,
+          dob: usr.DOB,
+          faceShape: usr.faceShapes,
+          bodyType: usr.bodyShapes,
+          facialLook: usr.facialLook,
+          hairColor: usr.hairColor,
+          eyeColor: usr.eyeColor,
+          skinType: usr.skinColor,
+          veinColor: usr.veinColor
+        },
         clothing: {
-          falttering: usr.clothingStyle.falttering,
-          trendy: usr.clothingStyle.trendy,
-          bold: usr.clothingStyle.bold,
-          stylish: usr.clothingStyle.stylish,
-          sober: usr.clothingStyle.sober
-        } 
-      },
-      personal: {
-        preference: usr.preference,
-        descClothing: usr.basicDetailsNote,
-        descPerceived: {
-          leader: usr.Perceive.leader,
-          hardworking: usr.Perceive.hardworking,
-          trustworthy: usr.Perceive.trustworthy
+          existingWadrobe: {},
+          clothing: usr.clothingStyle
         },
-        lifestyle: {
-          creativeFields: usr.lifeStyle.creativeFields,
-          professional: usr.lifeStyle.professional,
+        personal: {
+          preference: usr.preference,
+          descClothing: usr.basicDetailsNote,
+          descPerceived: usr.Perceive,
+          lifestyle: usr.lifeStyle,
+          officeDress: usr.dressCode
         },
-        officeDress: {
-          formalWear: usr.dressCode.formalWear,
-        }
-      },
-      professional: {
-        industary: usr.personalAttrNote,
-        occupation: usr.yourOccupation,
-        role: ''
-      },
-      remarks: usr.styleReferenceNote
+        professional: {
+          industary: usr.personalAttrNote,
+          occupation: usr.yourOccupation,
+          role: ''
+        },
+        remarks: usr.styleReferenceNote
+      }
     }
+    
     response.details = retObj;
     res.json(response);
   })
