@@ -60,7 +60,7 @@ router
         var teaSchoolOptions = options;
         
         (async() => {
-            //const pdfFile = await generatePdf(teaSchoolOptions)
+            const pdfFile = await generatePdf(teaSchoolOptions)
             res.send(pdfFile)
             //res.render('templates/psgFinal', response.details)
         })().catch(e => setImmediate(() => {
