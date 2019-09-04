@@ -11,12 +11,19 @@ router
     res.json(response);
   })
 })
+.get('/user/mobile/:_mobile', function (req,res, next) {
+  var mobile = req.params['_mobile'];
+  PSG.getPsgByMobile(mobile, (response)=> {
+    res.json(response);
+  })
+})
 .get('/user/:_userid', function (req,res, next) {
   var id = req.params['_userid'];
   PSG.getPsgByUserid(id, (response)=> {
     res.json(response);
   })
 })
+
 .get('/:_id', function (req,res, next) {
   var id = req.params['_id'];
   PSG.getPsgById(id, (response)=> {
@@ -25,17 +32,12 @@ router
 })
 .get('/generate/:_id/pdf', function (req, res, next) {
   var psgId = req.params['_id'];
-  var pathToLogo = config.s3.s3Url+config.s3.staticImagesUrl+'logo.png';
-  var pathToQrCode = config.s3.s3Url+config.s3.staticImagesUrl+'qrc_code.png';
   PSG.getPsgById(psgId, function (response) {
     if(response.status)
       if(response.details.userId) {
-        response.details.pathToLogo = pathToLogo;
-        response.details.pathToQrCode = pathToQrCode;
-        response.details.recShirts = [];
         response.details.name = "PSG";
         var options = {
-          htmlTemplatePath: path.resolve(__dirname, '../views/templates/psgdemo.pug'),
+          htmlTemplatePath: path.resolve(__dirname, '../views/templates/psgFinal.pug'),
       
           // Here you put an object according to https://github.com/sass/node-sass#options 
           styleOptions: {
@@ -58,9 +60,9 @@ router
         var teaSchoolOptions = options;
         
         (async() => {
-            const pdfFile = await generatePdf(teaSchoolOptions)
+            //const pdfFile = await generatePdf(teaSchoolOptions)
             //res.send(pdfFile)
-            res.render('templates/psgdemo', response.details)
+            res.render('templates/psgFinal', response.details)
         })().catch(e => setImmediate(() => {
             console.log("Error Occured While Sending Reports");
             console.log(e)
@@ -74,7 +76,7 @@ router
 })
 ;
 router
-.post('/psg', function (req, res) {
+.post('/', function (req, res) {
   var body = req.body;
   PSG.addPsg(body, function (response) {
       res.json(response);

@@ -15,7 +15,7 @@ module.exports = function(app) {
    * Error handling
    */
   _.forEach(AdminRoutes,function (key,value) {
-    app.use('/v2/admin'+value,key);
+    app.use('/v2/api'+value,key);
   });
 
   app.use(function(err, req, res, next) {

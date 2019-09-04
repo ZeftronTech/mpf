@@ -96,7 +96,7 @@ module.exports.getById = (id, callback) => {
     status: false,
     message: "Err Querying database, Try again"
   };
-  personalizeCollection.findById(id, {},function (errPsg, usr) {
+  personalizeCollection.findById(id, {},function (errusr, usr) {
       if(errusr) {
           callback(retObj)     
       } else {
@@ -123,4 +123,40 @@ module.exports.getByOwnerId = (ownerid, callback) => {
           callback(retObj);
       }
   });
+}
+
+module.exports.getByFilter = (filter, callback) => {
+  var querry = {}
+  if(filter.mob) {
+    querry = {
+      phone: filter.mob
+    }
+  } else if(filter.email) {
+    querry = {
+      email: filter.emial
+    }
+  }
+  var retObj = {
+    status: false,
+    message: "Err Querying database, Try again"
+  };
+  if(filter.mob || filter.email) {
+    personalizeCollection.findOne(querry, {},function (errusr, usr) {
+      if(errusr) {
+        console.log(errusr)
+          callback(retObj)
+      } else {
+          retObj.status = true;
+          retObj.message = "Success";
+          retObj.details = usr;
+          callback(retObj);
+      }
+  });
+  } else {
+    retObj.status = false;
+    retObj.message = "Error, No Mobile Number or Email Present";
+    retObj.details = {};
+    callback(retObj)
+  }
+
 }

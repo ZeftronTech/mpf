@@ -6,6 +6,8 @@ var Schema = mongoose.Schema;
 var personalStyleGuideSchema = new Schema({
   userId: { type: ObjectId, ref: 'users' },
   images: [String],
+  mobile: [String],
+  email: [String],
   firstName: String,
   lastName: String,
   brief: String,
@@ -17,10 +19,10 @@ var personalStyleGuideSchema = new Schema({
   fit: { name: { type: String, enum: config.shirtType }, image : String },
   outfit: { name: String, image: String },
   existingWadrobeMix: { name: String, image: String },
-  patterns: [{ type: String, enum: config.pattern }],
+  patterns: {name: { type: String, enum: config.pattern }, image: String},
   colorType: String,
-  colors: [String], 
-  avoidColors: [String],
+  colors: [{ name: String, color: String }], 
+  avoidColors: [{ name: String, color: String }], 
   recShirtType: [{ name: String, image: String }],
   recCollarType: [{ name: String, image: String }],
   suitLapel: { name: String, image: String },
@@ -71,6 +73,23 @@ module.exports.getPsgByUserid = (userid, callback) => {
     message: "Err Querying database, Try again"
 };
 personalStyleGuide.find({userId: userid}, function (errPsg, psg) {
+    if(errPsg) {
+        callback(retObj)     
+    } else {
+        retObj.status = true;
+        retObj.message = "Success";
+        retObj.details = psg;
+        callback(retObj);
+    }
+  });
+}
+
+module.exports.getPsgByMobile = (mobile, callback) => {
+  var retObj = {
+    status: false,
+    message: "Err Querying database, Try again"
+};
+personalStyleGuide.find({mobile: mobile}, function (errPsg, psg) {
     if(errPsg) {
         callback(retObj)     
     } else {
