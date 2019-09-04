@@ -35,6 +35,7 @@ router
   PSG.getPsgById(psgId, function (response) {
     if(response.status)
       if(response.details.userId) {
+        console.log(response.details)
         response.details.name = "PSG";
         var options = {
           htmlTemplatePath: path.resolve(__dirname, '../views/templates/psgFinal.pug'),
@@ -46,7 +47,10 @@ router
       
           // Here you put an object according to https://pugjs.org/api/reference.html#options
           // You can add any additional key to be used as a variable in the template.
-          htmlTemplateOptions: response.details,
+          htmlTemplateOptions: {
+            name: "PSG",
+            data: response.details
+          },
       
           // Here you put an object according to https://github.com/GoogleChrome/puppeteer/blob/v1.18.1/docs/api.md#pagepdfoptions
           pdfOptions: {

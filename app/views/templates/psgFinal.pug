@@ -539,7 +539,7 @@ head
         .left_heading_vertical
           span.small-lbl YOUR
           span.large-lbl   accessories
-        .person_image(style='background-image: url('+images[0]+')')
+        .person_image(style='background-image: url('+data.images[0]+')')
           | 
           .bottom_lbl_text
             span.person-lbl
@@ -565,7 +565,7 @@ head
 // Profile Page
 .pdf_container
   .maxine-heading
-    .maxine-heading__profile(style='background-image: url('+images[0]+')')
+    .maxine-heading__profile(style='background-image: url('+data.images[0]+')')
       .logo-top
         img(src='https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFStaticImages/logo.png' width='45px')
     .maxine-heading__heading-primary
@@ -583,48 +583,48 @@ head
   .products_grid
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+faceType.image+')')
+        .image(style='background-image: url('+data.faceType.image+')')
         .info.accessories
           h1 FACE TYPE
           p
-            | #{faceType.name}
+            | #{data.faceType.name}
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+skinType.image+')')
+        .image(style='background-image: url('+data.skinType.image+')')
         .info.accessories
           h1 SKIN TYPE
           p
-            | #{skinType.name}
+            | #{data.skinType.name}
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+facialLook.image+')')
+        .image(style='background-image: url('+data.facialLook.image+')')
         .info.accessories
           h1 FACIAL LOOK
           p
-            | #{facialLook.name}
+            | #{data.facialLook.name}
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+existingWadrobeMix.image+')')
+        .image(style='background-image: url('+data.existingWadrobeMix.image+')')
         .info.accessories
           h1
             | EXISTING
             | WARDROBE MIX
           p
-            | #{existingWadrobeMix.name}
+            | #{data.existingWadrobeMix.name}
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+bodyType.image+')')
+        .image(style='background-image: url('+data.bodyType.image+')')
         .info.accessories
           h1 BODY TYPE
           p
-            | #{bodyType.name}
+            | #{data.bodyType.name}
     .products_grid_card
       .products_grid_card__container
-        .image(style='background-image: url('+clothingStyle.image+')')
+        .image(style='background-image: url('+data.clothingStyle.image+')')
         .info.accessories
           h1 CLOTHING STYLE
           p
-            | #{clothingStyle.name}
+            | #{data.clothingStyle.name}
   .divider__line
   .footer
     .text-align-left.border-right
@@ -650,17 +650,17 @@ head
     .divider__line
     .style-team-section
       .image-card
-        .image(style='background-image: url('+fit.image+')')
+        .image(style='background-image: url('+data.fit.image+')')
         h1 Fit
-        p #{fit.name}
+        p #{data.fit.name}
       .image-card
-        .image(style='background-image: url('+fit.outfit+')')
+        .image(style='background-image: url('+data.fit.outfit+')')
         h1 Outfit
         p Formal to business casuals
       .image-card
-        .image(style='background-image: url('+patterns.image+')')
+        .image(style='background-image: url('+data.patterns.image+')')
         h1 Patterns
-        p #{patterns.name}
+        p #{data.patterns.name}
     .colors
       div(style='display: flex;align-items:flex-end')
         div(style='flex:6;padding-left: 5rem')
@@ -736,9 +736,9 @@ head
       div(style='margin-top: 1.5rem')
         img(src='https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFTypeImages/Collar/collers.png' width='65%')
     .shirt_Collars_section
-      h1 Suit Lapels Recommendations for you (#{suitLapel.name})
+      h1 Suit Lapels Recommendations for you (#{data.suitLapel.name})
     div(style='margin-top: 1.5rem')
-      img(src=suitLapel.image width='10%')
+      img(src=data.suitLapel.image width='10%')
     .divider__line
     .footer
       .text-align-left.border-right
@@ -765,7 +765,7 @@ head
         | an exclusive styling recommendation and outfit collection that is just perfect for you.
   .divider__line
   .products_grid
-    each prod in recShirts
+    each prod in data.recShirts
       .products_grid_card
         .products_grid_card__container
           p(hidden="true") #{prod._id}
