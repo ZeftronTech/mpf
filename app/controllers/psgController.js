@@ -34,7 +34,7 @@ router
   var psgId = req.params['_id'];
   PSG.getPsgById(psgId, function (response) {
     if(response.status)
-      if(response.details.userId) {
+      if(response.details) {
         console.log(response.details)
         response.details.name = "PSG";
         var options = {

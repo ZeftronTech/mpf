@@ -791,7 +791,6 @@ head
     each prod in data.recShirts
       .products_grid_card
         .products_grid_card__container
-          p(hidden="true") #{prod._id}
           .image(style='background-image: url('+prod.image+')')
           .info
             h1 PRODUCT ID
@@ -829,54 +828,13 @@ head
         | an exclusive styling recommendation and outfit collection that is just perfect for you.
   .divider__line
   .products_grid
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://handcmediastorage.blob.core.windows.net/productimages/TR/TRPRAS99-G01-123323-800px-1040px.jpg)')
-        .info
-          h1 PRODUCT ID
-          span PD123654254
+    each prod in data.recTrousers
+      .products_grid_card
+        .products_grid_card__container
+          .image(style='background-image: url('+prod.image+')')
+          .info
+            h1 PRODUCT ID
+            span #{prod.productId}
     .products_grid_card
       .products_grid_card__container
         .image(style='background-image: url(https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFStaticImages/qrc_code.png)')
@@ -910,62 +868,14 @@ head
         | an exclusive styling recommendation and outfit collection that is just perfect for you.
   .divider__line
   .products_grid
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-        .info.accessories
-          h1 Detroit Watch
-          p
-            | Style Watches
-    .products_grid_card
+    each prod in data.recAccessories
+      .products_grid_card
         .products_grid_card__container
-          .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
+          .image(style='background-image: url('+prod.image+')')
           .info.accessories
-            h1 Detroit Watch
+            h1 #{prod.name}
             p
-              | Style Watches
-    .products_grid_card
-        .products_grid_card__container
-          .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-          .info.accessories
-            h1 Detroit Watch
-            p
-              | Style Watches
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-        .info.accessories
-          h1 Detroit Watch
-          p
-            | Style Watches
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-        .info.accessories
-          h1 Detroit Watch
-          p
-            | Style Watches
-    .products_grid_card
-        .products_grid_card__container
-          .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-          .info.accessories
-            h1 Detroit Watch
-            p
-              | Style Watches
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-        .info.accessories
-          h1 Detroit Watch
-          p
-            | Style Watches
-    .products_grid_card
-      .products_grid_card__container
-        .image(style='background-image: url(https://www.ripcurl.com.au/assets/images/2018/09/17/A3102-0146-1jpg-b7de4424-0003-4e1c-8abf-ec43ede28f25.jpg)')
-        .info.accessories
-          h1 Detroit Watch
-          p
-            | Style Watches
+              | #{prod.brand}
     .products_grid_card
       .products_grid_card__container
         .image(style='background-image: url(https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFStaticImages/qrc_code.png)')
