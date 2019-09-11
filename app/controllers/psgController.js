@@ -59,6 +59,10 @@ router
               format: 'A4',
               printBackground: true,
               
+          },
+          puppeteerOptions: {
+            headless: true,
+            args: ['--no-sandbox']
           }
         }
         var teaSchoolOptions = options;
