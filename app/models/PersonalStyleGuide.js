@@ -26,9 +26,9 @@ var personalStyleGuideSchema = new Schema({
   recShirtType: [{ name: String, image: String }],
   recCollarType: [{ name: String, image: String }],
   suitLapel: { name: String, image: String },
-  recShirts: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String}],
-  recTrousers: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String}],
-  recAccessories: [{ _id: { type: ObjectId, ref: 'products' }, name: String, image: String, brand: String}]
+  recShirts: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String, price: number, name: String}],
+  recTrousers: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String, price: number, name: String}],
+  recAccessories: [{ _id: { type: ObjectId, ref: 'products' }, name: String, image: String, brand: String, price: number}]
 }, { timestamps: true, versionKey: false, collection: "personalStyleGuides" });
 
 var personalStyleGuide = module.exports = mongoose.model('personalStyleGuide', personalStyleGuideSchema, 'personalStyleGuides');
