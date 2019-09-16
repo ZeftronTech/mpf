@@ -28,6 +28,7 @@ var personalStyleGuideSchema = new Schema({
   suitLapel: { name: String, image: String },
   recShirts: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String, price: Number, name: String}],
   recTrousers: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String, price: Number, name: String}],
+  recSuits: [{ _id: { type: ObjectId, ref: 'products' }, image: String, productId: String, price: Number, name: String}],
   recAccessories: [{ _id: { type: ObjectId, ref: 'products' }, name: String, image: String, brand: String, price: Number}]
 }, { timestamps: true, versionKey: false, collection: "personalStyleGuides" });
 

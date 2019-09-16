@@ -854,6 +854,46 @@ head
     .text-align-right
       span(style='font-size: 2rem;color:#757575') 04
 // / End TROUSERS PAGE
+// SUITS PAGE
+.pdf_container
+  .maxine-heading
+    .maxine-heading__logo
+      img(src='https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFStaticImages/logo.png')
+    .maxine-heading__heading-primary
+      h1.heading-primary--main
+        | RECOMMENDED
+        span.brand_font_color  TROUSERS
+      p.heading-primary--sub
+        | Here are our team of experts (Image Consultants, Stylists and Master Tailors) curated
+        | an exclusive styling recommendation and outfit collection that is just perfect for you.
+  .divider__line
+  .products_grid
+    each prod in data.recSuits
+      .products_grid_card
+        .products_grid_card__container
+          .image(style='background-image: url('+prod.image+')')
+          .info
+            h1 PRODUCT ID
+            span #{prod.productId}
+    .products_grid_card
+      .products_grid_card__container
+        .image(style='background-image: url(https://mpf-public-data.s3.ap-south-1.amazonaws.com/Images/MPFStaticImages/qrc_code.png)')
+        .info
+          p 1 . Open your app
+          p 1 . Point your camera
+          p 1 . Browser and shop
+  .divider__line
+  .footer
+    .text-align-left.border-right
+      span
+        | EDITION :
+        span.brand_font_color  2019
+    .text-align-center.border-right
+      span www.myperfectfit.com
+      h3(style='margin-top:0.5rem;font-size:1.3rem') MPF Personal Style Guide
+    .text-align-right
+      span(style='font-size: 2rem;color:#757575') 05
+// / SUITS PAGE
 // Recommended ACCESSORIES
 .pdf_container
   .maxine-heading
@@ -893,7 +933,7 @@ head
       span www.myperfectfit.com
       h3(style='margin-top:0.5rem;font-size:1.3rem') MPF Personal Style Guide
     .text-align-right
-      span(style='font-size: 2rem;color:#757575') 05
+      span(style='font-size: 2rem;color:#757575') 06
 // / End  Recommended ACCESSORIES
 // Contact Us Page
 .pdf_container
