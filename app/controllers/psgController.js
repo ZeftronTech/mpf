@@ -70,7 +70,10 @@ router
         (async() => {
             const pdfFile = await generatePdf(teaSchoolOptions)
             res.send(pdfFile)
-            //res.render('templates/psgFinal', response.details)
+            /*res.render('templates/psgFinal', {
+              name: "PSG",
+              data: response.details
+            })*/
         })().catch(e => setImmediate(() => {
             console.log("Error Occured While Sending Reports");
             console.log(e)

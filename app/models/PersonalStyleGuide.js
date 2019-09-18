@@ -11,18 +11,12 @@ var personalStyleGuideSchema = new Schema({
   firstName: String,
   lastName: String,
   brief: String,
-  faceType: { name: { type: String, enum: config.faceShapes }, image: String },
-  bodyType: { name: { type: String, enum: config.bodyShapes }, image:String },
-  facialLook: { name: { type: String, enum: config.FacialHair }, image: String},
-  skinType: { name: String, image: String },
-  clothingStyle: { name: String, image: String },
-  fit: { name: { type: String, enum: config.shirtType }, image : String },
-  outfit: { name: String, image: String },
-  existingWadrobeMix: { name: String, image: String },
-  patterns: {name: { type: String, enum: config.pattern }, image: String},
-  colorType: String,
-  colors: [{ name: String, color: String }], 
-  avoidColors: [{ name: String, color: String }], 
+  personalInfo: [],
+  styleData: [],
+  colorData: {
+    warmColors: [],
+    avoidColors: []
+  },
   recShirtType: [{ name: String, image: String }],
   recCollarType: [{ name: String, image: String }],
   suitLapel: { name: String, image: String },
@@ -113,6 +107,7 @@ module.exports.addPsg = (body, callback) => {
       if (errPsg) {
           retObj.status = false;
           retObj.message = "Error saving Psg";
+          console.log(errPsg)
           callback(retObj);
       } else {
           retObj.status = true;
