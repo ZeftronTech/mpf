@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.04b09630.chunk.css",
+    "main.js": "/static/js/main.3fe684e2.chunk.js",
+    "main.js.map": "/static/js/main.3fe684e2.chunk.js.map",
+    "runtime~main.js": "/static/js/runtime~main.cca38131.js",
+    "runtime~main.js.map": "/static/js/runtime~main.cca38131.js.map",
+    "static/css/2.d29d7e80.chunk.css": "/static/css/2.d29d7e80.chunk.css",
+    "static/js/2.3e5a3c1b.chunk.js": "/static/js/2.3e5a3c1b.chunk.js",
+    "static/js/2.3e5a3c1b.chunk.js.map": "/static/js/2.3e5a3c1b.chunk.js.map",
+    "index.html": "/index.html",
+    "precache-manifest.3a31c0136173e555d4fb8cd9f248c767.js": "/precache-manifest.3a31c0136173e555d4fb8cd9f248c767.js",
+    "service-worker.js": "/service-worker.js",
+    "static/css/2.d29d7e80.chunk.css.map": "/static/css/2.d29d7e80.chunk.css.map",
+    "static/css/main.04b09630.chunk.css.map": "/static/css/main.04b09630.chunk.css.map",
+    "static/media/Lapel.jpg": "/static/media/Lapel.c3115943.jpg",
+    "static/media/MPF_logo.png": "/static/media/MPF_logo.96b0ab50.png",
+    "static/media/index.css": "/static/media/roboto-latin-900italic.ebf6d164.woff2",
+    "static/media/_jd.png": "/static/media/_jd.16807ca8.png",
+    "static/media/collers.png": "/static/media/collers.b191d743.png",
+    "static/media/colors_palet.jpg": "/static/media/colors_palet.204f12dd.jpg",
+    "static/media/facebook.png": "/static/media/facebook.182394f7.png",
+    "static/media/google.png": "/static/media/google.71c4a870.png",
+    "static/media/mpflogo.png": "/static/media/mpflogo.12bc643d.png"
+  }
+}
