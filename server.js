@@ -1,9 +1,12 @@
 'use strict';
 
 /*
- * nodejs-express-mongoose
- * Copyright(c) 2015 Madhusudhan Srinivasa <madhums8@gmail.com>
- * MIT Licensed
+ "scripts": {
+    "start": "cross-env NODE_ENV=development nodemon server.js",
+    "test": "cross-env NODE_ENV=test babel-tape-runner test/test-*.js",
+    "pretest": "eslint .",
+    "prod": "pm2-runtime start ecosystem.config.js --env production"
+  },
  */
 
 /**
@@ -13,6 +16,7 @@
 require('dotenv').config();
 
 const fs = require('fs');
+const path = require('path')
 const join = require('path').join;
 const express = require('express');
 const mongoose = require('mongoose');
@@ -33,7 +37,10 @@ module.exports = {
   app,
   connection
 };
-
+app.use(express.static(path.join(__dirname, 'client/build')));
+if(process.env.NODE_ENV === 'production') {  
+  app.use(express.static(path.join(__dirname, 'client/build')));  
+}
 // Bootstrap models
 fs.readdirSync(models)
   .filter(file => ~file.indexOf('.js'))

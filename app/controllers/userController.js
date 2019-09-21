@@ -1,7 +1,9 @@
 var express = require('express');
 var router = express.Router();
+const path = require('path')
 var Personalize = require('../models/Personalize')
 router
+.get('/', (req, res) => {    res.sendFile(path.join(__dirname , '../../client/build/index.html'));  })
 .get('/:_id', function (req,res, next) {
   var id = req.params['_id'];
   Personalize.getById(id, (response)=> {
